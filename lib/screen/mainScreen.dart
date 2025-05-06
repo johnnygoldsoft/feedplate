@@ -22,6 +22,7 @@ class _MainscreenState extends State<Mainscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 60, // Hauteur de la barre d'application
         automaticallyImplyLeading: false,
         title: Text(
@@ -44,7 +45,7 @@ class _MainscreenState extends State<Mainscreen> {
                 Stack(children: [
                   CircleAvatar(
                       radius: 25,
-                      backgroundColor: Colors.grey[200],
+                      backgroundColor: Colors.grey[100],
                       child: Icon(
                         Icons.notifications_none_outlined,
                         color: Colors.black45,
@@ -56,7 +57,7 @@ class _MainscreenState extends State<Mainscreen> {
                     child: Container(
                       padding: const EdgeInsets.all(2),
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.redAccent,
                         borderRadius: BorderRadius.circular(6),
                       ),
                       constraints: const BoxConstraints(

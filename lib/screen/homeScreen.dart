@@ -1,3 +1,4 @@
+import 'package:feedplate/screen/servicesScreen.dart';
 import 'package:feedplate/screen/widget/gigCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,7 +67,7 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         SizedBox(height: 10),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Row(
                               children: [
@@ -312,19 +313,19 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               width: double.infinity,
-              height: 400,
+              height: 370,
               color: Colors.white,
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     margin: EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Recently viewed",
+                        Text("Recently Viewed",
                             style: GoogleFonts.openSans(
                               textStyle: TextStyle(
                                 fontSize: 22,
@@ -336,6 +337,7 @@ class _HomescreenState extends State<Homescreen> {
                           text: ' See all >',
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
+                              fontWeight: FontWeight.w800,
                               fontSize: 18,
                               color: Colors.blue,
                             ),
@@ -344,24 +346,66 @@ class _HomescreenState extends State<Homescreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    "Your personalized feed awaits you!",
-                    style: GoogleFonts.openSans(
-                      textStyle: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: 10, // Nombre d'éléments dans la liste
                       itemBuilder: (context, index) {
-                        return Gigcard();
+                        return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                PageRouteBuilder(
+                                  transitionDuration:
+                                      Duration(milliseconds: 500),
+                                  pageBuilder: (BuildContext context,
+                                      Animation<double> animation,
+                                      Animation<double> secondaryAnimation) {
+                                    return Servicesscreen();
+                                  },
+                                  transitionsBuilder: (BuildContext context,
+                                      Animation<double> animation,
+                                      Animation<double> secondaryAnimation,
+                                      Widget child) {
+                                    return Align(
+                                      child: FadeTransition(
+                                        opacity: animation,
+                                        child: child,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              );
+                            },
+                            child: Gigcard());
                       },
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Popular Services",
+                            style: GoogleFonts.openSans(
+                              textStyle: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                        RichText(
+                            text: TextSpan(
+                          text: 'See all >',
+                          style: GoogleFonts.openSans(
+                            textStyle: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 18,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ))
+                      ],
                     ),
                   ),
                 ],
