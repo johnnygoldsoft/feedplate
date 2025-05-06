@@ -1,16 +1,26 @@
-# feedplate
+# Freelance Platform - Flutter App
 
-A new Flutter project.
+![Kerjain Design](https://cdn.dribbble.com/users/12345/screenshots/21595440/kerjain-freelance-platform.png)
 
-## Getting Started
+## 📖 Description
 
-This project is a starting point for a Flutter application.
+Ce projet est une application mobile Front de plateforme de freelancing, développée avec **Flutter**. Inspirée par le magnifique design [Kerjain Freelance Platform sur Dribbble](https://dribbble.com/shots/21595440-Kerjain-Freelance-Platform), l'application vise à connecter les freelances et les clients de manière simple et intuitive.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Technologies utilisées
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🖥️ Frontend
+
+- **Flutter** : Framework principal pour le développement multiplateforme.
+- **Dart** : Langage de programmation utilisé avec Flutter.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
+
+## 🙏 Remerciements
+
+Merci à Dribbble pour l'inspiration de design.
+
+Merci à la communauté Flutter pour ses contributions et son soutien.

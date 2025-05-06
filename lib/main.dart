@@ -1,5 +1,6 @@
 import 'package:feedplate/screen/googleSignScreen.dart';
 import 'package:feedplate/screen/homeScreen.dart';
+import 'package:feedplate/screen/mainScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Feedplate',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: Homescreen(),
+      home: Mainscreen(),
     );
   }
 }
