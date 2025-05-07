@@ -26,11 +26,11 @@ class _MainscreenState extends State<Mainscreen> {
         toolbarHeight: 60, // Hauteur de la barre d'application
         automaticallyImplyLeading: false,
         title: Text(
-          'Feedplate',
+          'Feedplate.',
           style: GoogleFonts.openSans(
             textStyle: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 28, // Ajustement de taille
+              fontSize: 30, // Ajustement de taille
               color: Colors.black, // Couleur du texte
               letterSpacing: .5,
             ),

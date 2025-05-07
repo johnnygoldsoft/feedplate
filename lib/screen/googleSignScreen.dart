@@ -18,7 +18,7 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
   final List<String> _images = [
     'images/onbord1.jpg',
     'images/onbord2.jpg',
-    'images/post1.jpg',
+    'images/onbord3.jpg',
   ];
   final PageController _pageController = PageController();
 
@@ -27,41 +27,73 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Carrousel d'images
+          // Carrousel d'images 1
 
           CarouselSlider(
-            options: CarouselOptions(
-              height: double.infinity,
-              enlargeCenterPage:
-                  true, // Peut agrandir la page centrale pour un effet de zoom
-              enableInfiniteScroll: true, // Faire défiler en boucle
-              autoPlay: true, // Pour un défilement automatique
-              autoPlayInterval:
-                  Duration(seconds: 3), // Intervalle de défilement automatique
-              autoPlayAnimationDuration:
-                  Duration(milliseconds: 800), // Durée de l'animation
-              viewportFraction:
-                  1.0, // Assure que chaque image occupe l'écran entier
-            ),
             items: _images.map((imagePath) {
-              return Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 0.8,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    alignment: Alignment.topCenter,
-                    image: AssetImage(imagePath),
-                    fit: BoxFit.cover,
+              return AnimatedSwitcher(
+                switchInCurve: Curves.easeInOut,
+                switchOutCurve: Curves.easeInOut,
+                duration: Duration(milliseconds: 800),
+                child: Container(
+                  key: ValueKey<int>(_currentIndex),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(imagePath),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               );
             }).toList(),
+            options: CarouselOptions(
+              height: double.infinity,
+              viewportFraction: 1.0,
+              autoPlay: true,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+            ),
           ),
+
+          // Carrousel d'images 2
+
+          // CarouselSlider(
+          //   options: CarouselOptions(
+          //     height: double.infinity,
+          //     enlargeCenterPage:
+          //         true, // Peut agrandir la page centrale pour un effet de zoom
+          //     enableInfiniteScroll: true, // Faire défiler en boucle
+          //     autoPlay: true, // Pour un défilement automatique
+          //     autoPlayInterval:
+          //         Duration(seconds: 3), // Intervalle de défilement automatique
+          //     autoPlayAnimationDuration:
+          //         Duration(milliseconds: 800), // Durée de l'animation
+          //     viewportFraction:
+          //         1.0, // Assure que chaque image occupe l'écran entier
+          //   ),
+          //   items: _images.map((imagePath) {
+          //     return Container(
+          //       width: double.infinity,
+          //       height: MediaQuery.of(context).size.height / 0.8,
+          //       decoration: BoxDecoration(
+          //         image: DecorationImage(
+          //           alignment: Alignment.topCenter,
+          //           image: AssetImage(imagePath),
+          //           fit: BoxFit.cover,
+          //         ),
+          //       ),
+          //     );
+          //   }).toList(),
+          // ),
 
           Align(
             alignment: Alignment.topLeft,
             child: Container(
-              margin: EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
               child: Container(
                 child: Text(
                   'Feedplate',
@@ -82,7 +114,7 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               alignment: Alignment.center,
-              height: MediaQuery.of(context).size.height * 0.45,
+              height: MediaQuery.of(context).size.height * 0.5,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -103,12 +135,12 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
                       _images.length,
                       (index) => AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        width: _currentIndex == index ? 12.0 : 8.0,
+                        width: _currentIndex == index ? 10.0 : 8.0,
                         height: 8.0,
                         margin: EdgeInsets.symmetric(horizontal: 4.0),
                         decoration: BoxDecoration(
                           color: _currentIndex == index
-                              ? Colors.green
+                              ? Colors.blue
                               : Colors.grey,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -118,10 +150,14 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
                   SizedBox(height: 16),
                   // Texte de bienvenue
                   Text(
-                    'Find your next gig and connect with clients, and showcase your skills to the world.',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                    'Find your next gig, connect with clients, and showcase your skills to the world.',
+                    style: GoogleFonts.openSans(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26, // Ajustement de taille
+                        color: Colors.black, // Couleur du texte
+                        letterSpacing: .5,
+                      ),
                     ),
                   ),
                   SizedBox(height: 16),
@@ -233,20 +269,21 @@ class _GooglesignscreenState extends State<Googlesignscreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'pas encore de compte ?  ',
+                                'Have an account ?  ',
                                 style: GoogleFonts.openSans(
                                   textStyle: TextStyle(
                                     fontSize: 16, // Ajustement de taille
-                                    color: Colors.black87, // Couleur du texte
+                                    color: Colors.black54, // Couleur du texte
                                     letterSpacing: .5,
                                   ),
                                 ),
                               ),
                               RichText(
                                   text: TextSpan(
-                                text: 'Se connecter',
+                                text: 'Login in',
                                 style: GoogleFonts.openSans(
                                   textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 16, // Ajustement de taille
                                     color:
                                         Color(0xFF0A6BAC), // Couleur du texte

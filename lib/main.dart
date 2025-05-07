@@ -2,11 +2,13 @@ import 'package:device_preview/device_preview.dart';
 import 'package:feedplate/screen/googleSignScreen.dart';
 import 'package:feedplate/screen/homeScreen.dart';
 import 'package:feedplate/screen/mainScreen.dart';
+import 'package:feedplate/screen/servicesScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     DevicePreview(
+      isToolbarVisible: false,
       builder: (context) => const MyApp(),
     ),
   );
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: Mainscreen(),
+      home: Googlesignscreen(),
     );
   }
 }

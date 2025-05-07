@@ -197,11 +197,15 @@ class _HomescreenState extends State<Homescreen> {
                                     children: [
                                       Text(
                                         "110/120 Copy",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
+                                        style: GoogleFonts.openSans(
+                                          textStyle: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
                                       ),
-                                      SizedBox(width: 10),
+                                      SizedBox(width: 5),
                                       Container(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 10),
