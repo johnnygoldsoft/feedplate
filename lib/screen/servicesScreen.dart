@@ -1,6 +1,7 @@
 import 'package:feedplate/screen/mainScreen.dart';
 import 'package:feedplate/screen/widget/Tab/tabControllerscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Servicesscreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        toolbarHeight: 50.h,
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
@@ -74,12 +76,13 @@ class _ServicesscreenState extends State<Servicesscreen> {
                 height: MediaQuery.of(context).size.height * 0.35,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/onbord1.jpg"),
+                        image: AssetImage("assets/images/onbord1.jpg"),
                         fit: BoxFit.cover)),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.w),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       child: Row(
@@ -93,7 +96,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                                   "Graphic Design",
                                   style: GoogleFonts.openSans(
                                     textStyle: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       color: Colors.blue,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -105,7 +108,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                                   softWrap: true,
                                   style: GoogleFonts.openSans(
                                     textStyle: TextStyle(
-                                      fontSize: 26,
+                                      fontSize: 20.sp,
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -113,6 +116,9 @@ class _ServicesscreenState extends State<Servicesscreen> {
                                 ),
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            width: 20.w,
                           ),
                           Column(
                             children: [
@@ -140,87 +146,88 @@ class _ServicesscreenState extends State<Servicesscreen> {
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 1,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellowAccent[700],
+                    SizedBox(
+                      height: 4.h,
                     ),
-                    Text(
-                      '4.9 ',
-                      style: GoogleFonts.openSans(
-                        textStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87),
-                      ),
-                    ),
-                    SizedBox(width: 4),
-                    Text("(129) "),
-                    SizedBox(width: 4),
                     Container(
-                      width: 4,
-                      height: 4,
-                      color: Colors.black87,
-                    ),
-                    SizedBox(width: 4),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 5),
-                      child: CircleAvatar(
-                        radius: 10,
-                        backgroundImage: AssetImage("images/onbord1.jpg"),
-                      ),
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      " BimGraph",
-                      style: TextStyle(
-                          color: Colors.black45,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 4),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.check,
-                            size: 20,
-                            color: Colors.white,
+                            Icons.star,
+                            color: Colors.yellowAccent[700],
                           ),
                           Text(
-                            " Top rated Seller",
-                            style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w800),
+                            ' 4.9',
+                            style: GoogleFonts.openSans(
+                              textStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87),
+                            ),
                           ),
+                          SizedBox(width: 4),
+                          Text("(129) "),
+                          SizedBox(width: 4),
+                          Container(
+                            width: 4,
+                            height: 4,
+                            color: Colors.black87,
+                          ),
+                          SizedBox(width: 4),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: CircleAvatar(
+                              radius: 10,
+                              backgroundImage:
+                                  AssetImage("assets/images/onbord1.jpg"),
+                            ),
+                          ),
+                          SizedBox(width: 2.w),
+                          Text(
+                            " Rizal Kece",
+                            style: TextStyle(
+                                color: Colors.black45,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(width: 4),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(20.r),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.check,
+                                  size: 20.sp,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  " Top rated Seller",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w800),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 4,
+                height: 4.h,
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Row(
                   children: [
                     Expanded(
@@ -251,18 +258,18 @@ class _ServicesscreenState extends State<Servicesscreen> {
                         },
                         style: OutlinedButton.styleFrom(
                           side: BorderSide.none,
-                          padding: EdgeInsets.symmetric(vertical: 18),
+                          padding: EdgeInsets.symmetric(vertical: 10.w),
                           backgroundColor: Colors.grey[100],
                           shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.circular(12), // Coins arrondis
+                                BorderRadius.circular(12.r), // Coins arrondis
                           ),
                         ),
                         child: Text(
                           'Chat',
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                              fontSize: 20, // Ajustement de taille
+                              fontSize: 20.sp, // Ajustement de taille
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
                               letterSpacing: .5,
@@ -302,19 +309,21 @@ class _ServicesscreenState extends State<Servicesscreen> {
                         },
                         style: OutlinedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
-                              vertical: 18), // Uniforme et centré
+                              vertical: 10.w), // Uniforme et centré
                           side: BorderSide.none,
                           backgroundColor: Colors.blueAccent,
                           shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.circular(12), // Coins arrondis
+                                BorderRadius.circular(12.r), // Coins arrondis
                           ), // Couleur de la bordure
                         ),
                         child: Text(
                           'Order Now',
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                              fontSize: 20, // Ajustement de taille
+                              fontSize: 20.sp,
+                              fontWeight:
+                                  FontWeight.w400, // Ajustement de taille
                               color: Colors.white, // Couleur du texte
                               letterSpacing: .5,
                             ),
@@ -345,13 +354,13 @@ class _ServicesscreenState extends State<Servicesscreen> {
                       'Basic',
                       style: GoogleFonts.openSans(
                         textStyle: TextStyle(
-                            fontSize: 24,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
                             color: Colors.grey[800]),
                       ),
                     ),
                     SizedBox(
-                      height: 4,
+                      height: 4.h,
                     ),
                     Row(
                       children: [
@@ -366,7 +375,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                               "3 Days Delivery",
                               style: TextStyle(
                                   color: Colors.grey[700],
-                                  fontSize: 18,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -385,7 +394,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                               "3 Days Delivery",
                               style: TextStyle(
                                   color: Colors.grey[700],
-                                  fontSize: 18,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -393,7 +402,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 10.h,
                     ),
                     Text(
                       "Doesn't include illustration. The illustration is provided by the customer.",
@@ -401,7 +410,7 @@ class _ServicesscreenState extends State<Servicesscreen> {
                       softWrap: true,
                       style: GoogleFonts.openSans(
                         textStyle: TextStyle(
-                            fontSize: 18,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
                             color: Colors.grey[400]),
                       ),
@@ -411,12 +420,13 @@ class _ServicesscreenState extends State<Servicesscreen> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Custom design',
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                fontSize: 24,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey[800]),
                           ),

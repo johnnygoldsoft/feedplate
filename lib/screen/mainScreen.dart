@@ -1,5 +1,6 @@
 import 'package:feedplate/screen/homeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Mainscreen extends StatefulWidget {
@@ -23,14 +24,14 @@ class _MainscreenState extends State<Mainscreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        toolbarHeight: 60, // Hauteur de la barre d'application
+        toolbarHeight: 50.h, // Hauteur de la barre d'application
         automaticallyImplyLeading: false,
         title: Text(
           'Feedplate.',
           style: GoogleFonts.openSans(
             textStyle: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 30, // Ajustement de taille
+              fontSize: 26.sp, // Ajustement de taille
               color: Colors.black, // Couleur du texte
               letterSpacing: .5,
             ),
@@ -38,7 +39,7 @@ class _MainscreenState extends State<Mainscreen> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+            padding: EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 5.0.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -55,10 +56,10 @@ class _MainscreenState extends State<Mainscreen> {
                     right: 0,
                     top: 0,
                     child: Container(
-                      padding: const EdgeInsets.all(2),
+                      padding: EdgeInsets.all(2.w),
                       decoration: BoxDecoration(
                         color: Colors.redAccent,
-                        borderRadius: BorderRadius.circular(6),
+                        borderRadius: BorderRadius.circular(6.r),
                       ),
                       constraints: const BoxConstraints(
                         minWidth: 12,
@@ -68,9 +69,10 @@ class _MainscreenState extends State<Mainscreen> {
                   )
                 ]),
                 SizedBox(
-                  width: 10,
+                  width: 10.w,
                 ),
-                CircleAvatar(backgroundImage: AssetImage("images/onbord2.jpg")),
+                CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/onbord2.jpg")),
               ],
             ),
           ),

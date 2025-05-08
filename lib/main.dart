@@ -4,13 +4,15 @@ import 'package:feedplate/screen/homeScreen.dart';
 import 'package:feedplate/screen/mainScreen.dart';
 import 'package:feedplate/screen/servicesScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      isToolbarVisible: false,
-      builder: (context) => const MyApp(),
-    ),
+    // DevicePreview(
+    //   isToolbarVisible: false,
+    //   builder: (context) => const MyApp(),
+    // ),
+    const MyApp(),
   );
 }
 
@@ -19,14 +21,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Feedplate',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Feedplate',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+          useMaterial3: true,
+        ),
+        home: Googlesignscreen(),
       ),
-      home: Googlesignscreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Gigcard extends StatelessWidget {
@@ -7,53 +8,53 @@ class Gigcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5),
-      width: 240,
+      margin: EdgeInsets.symmetric(horizontal: 5.w),
+      width: 220.h,
       // height: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: double.infinity,
-            height: 120,
+            height: 120.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               image: const DecorationImage(
-                image: AssetImage('images/post1.jpg'),
+                image: AssetImage('assets/images/post1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'Graphic Design',
                   style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4.h),
                 Text(
                   'Design a social media creative for a day',
                   maxLines: 2,
                   style: GoogleFonts.openSans(
                     textStyle: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const SizedBox(height: 5),
+                SizedBox(height: 8.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,33 +68,37 @@ class Gigcard extends StatelessWidget {
                           color: Colors.yellowAccent[700],
                         ),
                         Text(
-                          '4.9 ',
+                          ' 4.9',
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                fontSize: 15,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black87),
                           ),
                         ),
-                        Text("(129) "),
+                        Text(
+                          "(129) ",
+                          style: TextStyle(fontSize: 12.sp),
+                        ),
                         Container(
                           width: 4,
                           height: 4,
                           color: Colors.black87,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 5),
+                          padding: EdgeInsets.only(left: 5.w),
                           child: CircleAvatar(
-                            radius: 8,
-                            backgroundImage: AssetImage("images/onbord1.jpg"),
+                            radius: 8.r,
+                            backgroundImage:
+                                AssetImage("assets/images/onbord1.jpg"),
                           ),
                         ),
-                        SizedBox(width: 2),
+                        SizedBox(width: 2.w),
                         Text(
-                          " BimGraph",
+                          " Rizal Kece",
                           style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 14,
+                              color: Colors.black54,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -101,7 +106,7 @@ class Gigcard extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 8,
+                  height: 8.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,22 +114,26 @@ class Gigcard extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("From"),
+                        Text(
+                          "From",
+                          style: TextStyle(fontSize: 12.sp),
+                        ),
                         SizedBox(
-                          width: 4,
+                          width: 4.w,
                         ),
                         Icon(
                           Icons.label_rounded,
                           color: Color(0xFF05C267),
                         ),
                         SizedBox(
-                          width: 4,
+                          width: 4.w,
                         ),
                         Text(
                           "\$10",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                               color: Colors.black87),
                         ),
@@ -137,7 +146,7 @@ class Gigcard extends StatelessWidget {
                           color: Colors.black45,
                         ),
                         SizedBox(
-                          width: 8,
+                          width: 8.w,
                         ),
                         Icon(
                           Icons.favorite_rounded,

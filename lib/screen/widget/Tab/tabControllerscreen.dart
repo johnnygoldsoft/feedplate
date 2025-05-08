@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TabcontrollerScreen extends StatelessWidget {
   const TabcontrollerScreen({super.key});
@@ -11,11 +12,11 @@ class TabcontrollerScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             color: Colors.white, // Couleur de fond pour la TabBar
             child: TabBar(
               tabAlignment: TabAlignment.center,
-              labelPadding: EdgeInsets.symmetric(horizontal: 24),
+              labelPadding: EdgeInsets.symmetric(horizontal: 24.w),
               isScrollable: true,
               indicatorColor: Colors.blue,
               labelColor: Colors.blue,
@@ -27,11 +28,12 @@ class TabcontrollerScreen extends StatelessWidget {
                       Text(
                         "Basic",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 16.sp, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         " (\$10)",
-                        style: TextStyle(fontSize: 18, color: Colors.black54),
+                        style:
+                            TextStyle(fontSize: 16.sp, color: Colors.black54),
                       )
                     ],
                   ),
@@ -39,13 +41,15 @@ class TabcontrollerScreen extends StatelessWidget {
                 Tab(
                   child: Text(
                     "Standard",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Tab(
                   child: Text(
                     "Premium",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
